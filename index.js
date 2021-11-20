@@ -7,7 +7,7 @@ const ejs = require("ejs")
 const app = express()
 const images = require('./data/dog-data')
 const TelegramBot = require('node-telegram-bot-api')
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8020
 const TOKEN = '2142725507:AAEiAC2a0nnH_uhBuR8ltIObLINtLp384Sc'
 const {img_acita,img_buldog,img_pitbull,img_lablador,img_basengi,img_germanshepherd } = images[0]
 app.use(express.static("./public"))
