@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"></head>
+    <link rel="stylesheet" href="./main.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+  
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-10 offset-md-1">
+          <h1 class="text-center">Things you can do with the Dog API</h1>
+          <p id="dogInfo"></p>
+          <h2>Get random images</h2>
+          <div class="alert alert-danger" role="alert"></div>
+          <div id="randomImageContainer"></div>
+          <p class="dogInfo h5">Random image of a...</p>
+          <button class="btn btn-primary random">Random Doggo!</button>
+        </div>    
+      </div>
+    </div>
+  
+    
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-10 offset-md-1">
+          <h2>Select from a dropdown</h2>
+          <div class="form-group">
+            <select name="doggosDropdown" id="doggoDropDown" class="form-control"></select>
+          </div>
+          <div id="listImageContainer"></div>
+          <button class="btn btn-primary list">More from this breed please!</button>
+        </div>
+      </div>
+   </div><!--end container-->
+  </div><!--end container fluid-->
+  
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col-md-10 offset-md-1">
+        <h1>Create an image grid</h1>        
+          <div class="card-deck mb-3 text-center"> </div>
+          <button class="btn btn-primary grid">Refresh Grid</button>
+      </div>
+    </div>
+  </div>
+<script src="./main.js"></script>
+</html>

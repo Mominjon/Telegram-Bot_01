@@ -1,0 +1,68 @@
+h1,
+h2 {
+    font-family: 'Indie Flower', cursive;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+#randomImageContainer,
+#listImageContainer {
+    width: 100%;
+    min-height: 300px;
+}
+
+#randomImageContainer {
+    background-color: #fff;
+}
+
+button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.alert {
+    display: none;
+}
+
+img {
+    max-height: 300px;
+}
+
+#listImageContainer {
+    margin-top: 30px;
+}
+
+#doggoDropDown {
+    padding: 2px;
+}
+
+#dogInfo {
+    text-align: left;
+    margin-top: 35px;
+}
+
+.form-control {
+    font-size: 1.2em;
+}
+
+.container-fluid {
+    background: #efefef;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.container-fluid:last-of-type {
+    background: #fff;
+    padding-bottom: 30px;
+}
+
+.container,
+.card-deck {
+    margin-top: 30px;
+}
