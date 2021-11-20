@@ -11,9 +11,7 @@ const PORT = process.env.PORT || 8000
 const TOKEN = '2142725507:AAEiAC2a0nnH_uhBuR8ltIObLINtLp384Sc'
 const {img_acita,img_buldog,img_pitbull,img_lablador,img_basengi,img_germanshepherd } = images[0]
 app.use(express.static("./public"))
-app.use(express.urlencoded({
-    extended: true
-}))
+app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs');
 app.use(express.json())
 
@@ -23,9 +21,7 @@ app.get("/", (req, res) => res.render("index"))
 
 const datauser = []
 
-const bot = new TelegramBot(TOKEN, {
-    polling: true
-})
+const bot = new TelegramBot(TOKEN, { polling: true })
 
 bot.onText(/\/start/, msg => {
     const receiver = msg.chat.id
@@ -304,12 +300,8 @@ bot.on("message", msg => {
 
 bot.on('callback_query',  data => {
     const receiver = data.from.id
-    
+
     let username;
-
-    const {data: id} = data
-
-    let dog =  img_acita.find(e=> e == id)
     bot.sendMessage(receiver, 'Ismingizni kiriting', {
         reply_markup: {
             force_reply: true
@@ -333,16 +325,13 @@ bot.on('callback_query',  data => {
                 }
             }).then(payload =>  {
                 const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
-    
                     bot.removeReplyListener(replyListenerId)
-        
                     const { contact: { phone_number: number } } = msg
-                    
                     datauser.push({
                         username,
                         contact: number
                     })          
-                    bot.sendMessage(receiver, 'Sizning buyurtmangiz qabul qilindi, yaqin orada aloqaga chiqamiz !!' + username, {
+                    bot.sendMessage(receiver, `Sizning buyurtmangiz qabul qilindi, yaqin orada aloqaga chiqamiz ${username} !!`, {
                         reply_markup: {
                             keyboard: [
                                 [
@@ -354,7 +343,6 @@ bot.on('callback_query',  data => {
                             resize_keyboard: true
                         }
                     })
-                    
                 })
             })
         })
@@ -362,9 +350,8 @@ bot.on('callback_query',  data => {
 })
 bot.on("polling_error", console.log);
 
-app.get("/sels", (req, res) => res.send(JSON.stringify(datauser)))
+// telegram bot end
 
+app.get("/sels", (req, res) => res.send(JSON.stringify(datauser)));
 
-app.listen(PORT, () => {
-    console.log("server run port " + PORT)
-})
+app.listen(PORT, () => {console.log("server run port " + PORT)})
